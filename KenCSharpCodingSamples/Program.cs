@@ -22,9 +22,13 @@ namespace KenCSharpCodingSamples
             CollectionExamples CE = new CollectionExamples();
             CollectionExamples.CollectionFunc();
 
-            // Collections handling
+            // Classes 101
             ClassExamples1 CE1 = new ClassExamples1();
             ClassExamples1.ClassExamples1Func();
+
+            // Extension Methods
+            ExtensionMethods EM1 = new ExtensionMethods();
+            ExtensionMethods.ExtensionMethodsFunc();
 
             Environment.ExitCode = 1;
         }

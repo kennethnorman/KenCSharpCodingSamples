@@ -42,6 +42,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Arrays.cs" />
+    <Compile Include="ExtensionMethods.cs" />
     <Compile Include="ClassExamples1.cs" />
     <Compile Include="Collections.cs" />
     <Compile Include="DateTime.cs" />

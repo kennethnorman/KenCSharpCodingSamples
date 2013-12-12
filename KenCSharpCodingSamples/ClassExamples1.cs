@@ -10,9 +10,44 @@ namespace KenCSharpCodingSamples
     {
         public class Motor
         {
+            // Override default constructor
+            public Motor() : this(0, 0) 
+            {
+                m_nPowerBHP = 0;
+                m_nPowerKW = 0;
+                m_nCylinders = 4;
+            }
+
+            // Correctly overloaded constructors
+            public Motor(int nCylinders) : this(0, nCylinders)
+            {
+            }
+            public Motor(int nPowerBHP, int nCylinders)
+            {
+                // Most specific constructor does the work
+                m_nPowerBHP = nPowerBHP;
+                m_nCylinders = nCylinders;
+            }
+
             public int m_nPowerBHP;
-            public int m_nPowerKW;
-            public int m_nCylinders;
+
+            // Properties and Accessors
+
+            // Compiler assisted implementation
+            internal int m_nPowerKW { get; private set; }
+
+            // Complete implementation
+            public int m_nCylinders
+            {
+                get { return _m_nCylinders; }
+                set { _m_nCylinders= value; }
+            }
+            private int _m_nCylinders;
+
+            // initializer
+            private string m_sAxis = "Transverse";
+            // but can't do this:
+            //internal string m_sConfiguration { get; private set; } = "Inline Four";
 
             public void UpdateCylinders(int nCylinders, ref int nPowerBHP, ref int nPowerKW)
             {
@@ -154,6 +189,14 @@ namespace KenCSharpCodingSamples
             int nBHP=0;
             nKW=0;
             bike.m_Motor.UpdateCylinders(4, ref nBHP, ref nKW);
+
+            // Object initializer
+            Motor TestMotor = new Motor
+            {
+                m_nCylinders= 6,
+                m_nPowerBHP= 320, 
+                // m_nPowerKW= 0
+            };
         }
     }
 }
