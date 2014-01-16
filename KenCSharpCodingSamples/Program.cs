@@ -26,6 +26,14 @@ namespace KenCSharpCodingSamples
             ClassExamples1 CE1 = new ClassExamples1();
             ClassExamples1.ClassExamples1Func();
 
+            // Classes 102
+            ClassExamples2 CE2 = new ClassExamples2();
+            ClassExamples2.ClassExamples2Func();
+
+            // Classes 103
+            ClassExamples3 CE3 = new ClassExamples3();
+            ClassExamples3.ClassExamples3Func();
+
             // Extension Methods
             ExtensionMethods EM1 = new ExtensionMethods();
             ExtensionMethods.ExtensionMethodsFunc();

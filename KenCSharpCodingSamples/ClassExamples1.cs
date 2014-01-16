@@ -197,6 +197,31 @@ namespace KenCSharpCodingSamples
                 m_nPowerBHP= 320, 
                 // m_nPowerKW= 0
             };
+
+
+            // Is and as conversions
+            Vehicle transportation = new Car();
+
+            if (transportation is Car)
+                transportation.m_BaseColour = "red";
+
+            if (transportation is Bike)
+                transportation.m_BaseColour = "blue";
+
+            Console.WriteLine("transportation is {0}", transportation.m_BaseColour);
+
+            Bike mybike = transportation as Bike;
+            if (mybike != null)
+            {
+                mybike.m_Manufacturer = "yamaha";
+            }
+
+            Car mycar = transportation as Car;
+            if (mycar != null)
+            {
+                mycar.m_Manufacturer = "ford";
+            }
+
         }
     }
 }
